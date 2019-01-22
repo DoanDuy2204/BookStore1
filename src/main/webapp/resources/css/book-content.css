@@ -1,0 +1,82 @@
+/*start content*/
+.content{
+	width:90%;
+	display:flex;
+	margin:2em auto;
+}
+.content a{
+	color:black;
+}
+.content a:hover{
+	color:red;
+	text-decoration: underline;
+}
+.left h4{
+	text-align: center;
+    padding: 1em 0;
+}
+.rỉght h4{
+	text-align: center;
+    font-size: 1.2em;
+    padding: 0 1em;
+    overflow-x: hidden;
+    max-heigth: 3.2em;
+    height:3.2em;
+}
+.content p{
+	font-weight:bold;
+	font-size:0.9em;
+	padding:0.3em 0 ;
+	text-align: center;
+}
+.content .fas, .far{
+	color: yellow;
+	font-size:1em;
+}
+.content span{
+	padding: 0 0.5em;
+	color: red;
+}
+.left{
+	width:17%;
+}
+.left li{
+	padding:0.5em 1em;
+	list-style-type: disc;
+	list-style-position: inside;
+}
+.right{
+	width:84%;
+	padding:2em 0;	
+	background: white;
+}
+.right>div{	
+	margin-left:1em;
+	background:white;
+	display:flex;
+	width:75%;
+	max-width:75%;
+}
+.right button{
+	margin-bottom: 1.5em;
+    padding: 0.5em 1em;
+    border: 1px solid #a9a9a9;
+    font-size: 1em;
+	margin-top:0.5em;
+	margin-left:1.8em;
+}
+.right button:hover{
+	background: blue;
+	border: 1px solid white;
+	cursor: pointer;
+	color: red;	
+}
+.right>div>div:hover{
+	z-index: 1000;
+	cursor: pointer;
+	box-shadow: 0 0 15px -4px;
+}
+.right>div>button{
+	margin-left:54em;
+}
+/*Start bottom-content */

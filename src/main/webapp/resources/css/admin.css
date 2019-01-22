@@ -1,0 +1,92 @@
+@charset "UTF-8";
+*{padding: 0;	margin: 0;	font-family: 'Oswald', sans-serif;}
+body{height: 100%;width: 100%;display: flex;}
+li{list-style-type: none;}
+a{color:white;text-decoration: none;}
+.left{background: #303641;width: 20%;
+		border-right: 1px solid #a9a9a9;}
+.left h3{
+	padding: 1em 2em;
+    border-bottom: 1px solid #756565;
+    background: #303641;
+    color: white;
+    font-size: 1.5em;
+}
+.left>ul{padding:1.5em 0;background: #303641;}
+.left i{padding-right: 1em;font-size: 1.2em;}
+.left .fa-angle-down{ margin-left: 3em;}
+.left li button{
+	width: 100%;
+    text-align: start;
+    font-size: 1em;
+    height: 4em;
+    background: #303641;
+    border: none;
+    color: #8d9795;
+    padding-left: 3em;
+	margin: 0.5em 0;}
+.left button:hover{background: #34373c;
+	cursor: pointer;}
+#ul-down,#ul-down1 {display:none;}
+#ul-down i,#ul-down1 i{padding-right: 2em;}
+#ul-down button,#ul-down1 button{padding-left: 5em;}
+/*Start right*/
+.right{width:80%;background: #efeded;}
+.top{padding: 1.4em 3em;text-align:end;
+	 border-bottom: 1px solid #dcdcdc;background: white;}
+.top i{padding-right: 0.5em;}
+.top button{
+	padding: 0.5em;
+    margin: 0 1em;
+    color: white;
+    border: 1px solid #a9a9a9;
+    font-size: 0.9em;
+    background: #303641;
+    border-radius: 0.4em;
+    transition: 0.2s all;
+}
+.top img{margin-right: 25em; float: left;}
+.top button:hover{background:#bbbbbd;
+		color: red;cursor: pointer;}
+/*Start bottom*/
+.bottom>h2{padding:2em 2em;text-decoration: underline;}
+.bottom>h2>input{ margin-left: 52%;padding: 0.2em 1em; border-radius: 0.5em;
+			 border: 1px solid #a9a9a9;height: 1.7em;}
+.bottom>h2>button{ padding: 0.5em;border-radius: 1em;border: none;
+			background: #212529; color: white;transaction:0.2s all;}
+.bottom>h2>button:hover{cursor: pointer;background:#0000ff;color:red; }
+.bottom hr{margin:0 auto;margin-bottom: 4em;width: 90%;}
+.bottom .graph{display: flex;justify-content: space-around;}
+.bottom .graph>div{border: 1px solid #dcdcdc;width: 23%;
+					transition: 0.3s all;border-radius: 0.5em;background: white;}
+.bottom .graph>div:hover{transform: scale(1.1);cursor: pointer;}
+.bottom .graph>div h2{padding: 1em 1em;}
+.bottom .graph>div p{padding: 1.2em;}
+.bottom .graph>div i{padding-right: 1.7em;font-size: 3em;}
+.bottom .graph>div span{font-size: 2em;font-weight: bold;}
+.bottom .chart{margin:2em;margin-top: 3em;}
+.bottom .product table{width: 95%;margin:2em auto;border-collapse: collapse;
+            background: #212529;color: white;font-size: 1em;}
+.bottom .product table tr{border-bottom: 1px solid #32383e;}
+.bottom .product table .tr1:hover{background: #2c3034;cursor: pointer;}
+.bottom .product table th,.bottom .product table td{padding:1.5em 0.5em;text-align: center
+                            ;border-right: 1px solid #32383e;}
+.bottom .product table button{border:none;color:white;background:#212529; }
+.bottom .product table td{color: #e4dddd;padding: 1em 0.2em;cursor: pointer;}
+.bottom .product table td button:hover{color:red;text-decoration: underline;cursor: pointer;}
+#numberPage{text-align:center;margin-bottom:3em;}
+#numberPage button{padding:0 1em;border:none;color:black;font-size:1em;background:#efeded; }
+#numberPage button:hover{cursor: pointer;}
+/*End right*/
+.bottom .update table {width: 80%;margin: 2em auto;}
+.bottom .update table th{width: 25%;font-size: 1.1em;}
+.bottom .update table input{ width: 50%;margin: 1em 0.5em;padding: 0.5em;
+   				 height: 1.5em;border: 1px solid #a9a9a9;border-radius: 0.5em;}
+.bottom .update #tdauthor input{width: 5%;margin: 0;padding: 0;}
+.bottom .update select {margin: 1em;padding: 0.5em;border-radius:0.5em;}
+.bottom .update button{padding: 0.8em;border:1px solid #a9a9a9;border-radius: 0.5em;
+						font-size: 1em;margin: 2em 0.5em;transition: 0.2s all;}
+.bottom .update #tdbtn{text-align: center;}
+.bottom .update button:hover{background: blue;color: red;cursor: pointer;}
+.bottom .update label{margin-right:1em;}
+.bottom .update span{width: 50%;display: inline-block;}

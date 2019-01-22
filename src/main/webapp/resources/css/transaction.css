@@ -1,0 +1,101 @@
+@charset "UTF-8";
+.content{
+	padding: 5em 0;
+    box-shadow: 1px 1px 16px -7px black;
+    width: 80%;
+    margin: 3em auto;
+    border: 1px solid #d9d9d9;
+    border-radius:0.5em;
+    display: flex;
+    justify-content: space-around;
+}
+.div1{
+	width: 50%;
+    background: #ebe5f16e;
+    border:1px solid #dcdcdc;
+    border-radius: 1em;
+    padding: 1em;
+}
+.div1 h2,h3{
+	padding:1em;
+	text-align: center;
+}
+.div1 table{
+	border-collapse: collapse;
+	width:90%;
+}
+.div1 td{
+	text-align: center;
+}
+.div1 .filename{
+	width : 20%;
+}
+.div1 input{
+	margin: 1.2em 0;
+    padding: 0.8em;
+    width: 80%;
+    border-radius: 0.3em;
+    border: 1px solid #a9a9a9;
+}
+.div1 .payment{
+	width:5%;
+	padding:0px;
+	margin:0px;
+}
+.div1 select{
+	width: 40%;
+    padding: 0.5em;
+}
+.div1 button{
+	margin: 1.4em;
+    padding: 0.7em;
+    background: #dad8d6;
+    border: 1px solid #a9a9a9;
+    border-radius: 0.3em;
+    font-size: 1em;
+    transition: 0.3s all;
+}
+.div1 button:hover{
+	cursor:pointer;
+	background: #4A5899;
+	color:white;
+}
+#error, #error_user, #error_pass{
+	width:150%;
+	font-size: 0.85em;
+	padding-right:2em;
+	color:red;
+	display: none;
+}
+#payment{
+	display:none;
+}
+.div2{
+	width: 30%;
+	padding:3em 2em;
+	border:1px solid #dcdcdc;
+	border-radius:1em;
+}
+.div2 table{
+	border-collapse: collapse;
+	border:1px solid black;
+	width:90%;
+}
+.div2 th{
+	padding:0.7em;
+	border-right:1px solid black;
+	border-bottom:1px solid black;
+	
+}
+.div2 td{
+	border-right:1px solid black;
+	padding:0.5em;
+	text-align:center;
+}
+.div2 #allmoney td{
+	border-top:1px solid black;
+}
+.error{
+	color:red;
+	font-size:0.8em;
+}

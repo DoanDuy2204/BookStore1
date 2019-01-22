@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/*start content*/
+.content{
+	width: 90%;
+	margin: 2em auto;
+}
+.top{
+	height: 3.4em;
+	line-height: 3.4em;
+   	border-bottom: 2px solid blue;
+}
+.top h3{
+	font-size: 1.3em;
+    color: white;
+    float: left;
+    padding: 0 2em;
+    border-radius: 0.3em 2em 0 0;
+    background: #2222e8;
+}
+.top div{
+	heigth:100%;
+	position: absolute;
+	left:65%;
+}
+.top li{
+	float: left;
+	text-align: center;
+    border: none;
+}
+.top button{
+	border: none;
+    height: 3.4em;
+    width: 8em;
+    background: white;
+    font-size: 1em;
+}
+.top button:hover{
+	background: #4747e8bf;
+	color: red;
+	cursor: pointer;
+}
+/* Start noibat */
+.content a{
+	color:black;
+}
+.bottom-noibat {
+	background: white;
+	margin: 1.5em 0;
+	height: 28em;
+	padding: 1em 0;
+}
+.bottom-noibat>div{
+	float: left;
+	width: 16.5%;
+}
+.bottom-noibat>div:hover{
+	z-index: 1000;
+	cursor: pointer;
+	box-shadow: 0 0 15px -4px;
+}
+.bottom-noibat img,.right img{
+	width: 90%;
+    padding-top: 0.7em;
+    margin: auto;
+    padding-left: 0.5em;
+}
+.content h4{
+	text-align: center;
+    font-size: 1.2em;
+    padding: 0 1em;
+    overflow-x: hidden;
+    max-heigth: 3.2em;
+    height:3.2em;
+}
+.content p{
+	font-size:0.9em;
+	padding:0.3em 0 ;
+	text-align: center;
+}
+.content .fas, .far{
+	color: yellow;
+	font-size:1em;
+}
+.content span{
+	padding: 0 0.5em;
+	color: red;
+}
+.content a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.bottom-noibat button,.right button{
+	margin-bottom: 1.5em;
+    padding: 0.5em 1em;
+    border: 1px solid #a9a9a9;
+    font-size: 1em;
+}
+.bottom-noibat button:hover{
+	background: blue;
+	border: none;
+	cursor: pointer;
+	color: red;
+}
+.bottom-noibat>button{
+	margin-left:66.6em;
+}
+/* End noi bat */
+.left{
+	max-width:17%;
+}
+/*Bottom*/
+.bottom{
+	display:flex;
+	margin-top:1.5em;
+}
+.right{
+	background:white;
+	padding-left:1em;
+	width:83%;
+	max-width:83%;
+	padding:1.5em 0;
+}
+.right>div>div{
+	float:left;
+	width:20%;
+	max-width:20%;
+}
+.right>div>div:hover{
+	z-index: 1000;
+	cursor: pointer;
+	box-shadow: 0 0 15px -4px;
+}
+.right button{
+	margin-top:0.5em;
+}
+.right button:hover{
+	background: blue;
+	border: 1px solid white;
+	cursor: pointer;
+	color: red;	
+}
+.right>div>button{
+	margin-left:54em;
+}
+.publishinghouse{
+	padding-top:2em;
+}
+/* End bottom */
+/*end content*/

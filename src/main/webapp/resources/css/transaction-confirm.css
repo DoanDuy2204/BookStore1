@@ -1,0 +1,52 @@
+@charset "UTF-8";
+.content{
+	width: 80%;
+	margin: 2em auto;
+	padding: 3em;
+	box-shadow: 0 0 15px -5px;
+}
+.content a{
+	color:black;
+}
+.content h2{
+	text-align: center;
+	padding: 1.5em;
+}
+.content table{
+	width: 70%;
+	margin: auto;
+}
+.content table td,th{
+	 	text-align: center;
+	padding: 0.8em;
+}
+#tableproduct{
+	margin-top: 2em;
+	border-collapse: collapse;
+	border:1px solid black;
+}
+ #tableproduct td{
+ 	border-right: 1px solid black;
+ }
+ #tableproduct th{
+	border: 1px solid black;
+}
+#tongtien{
+	border-top: 1px solid black;
+}
+.content p{
+	text-align: center;
+	padding: 3em;
+}
+.content p a{
+	padding: 0.7em;
+	margin:0 3em;
+	transition: 0.2s all ;
+	border-radius: 1em;
+	border:1px solid #a9a9a9;
+}
+.content p a:hover{
+	cursor: pointer;
+	background: #9192d6;
+	color: red;
+}

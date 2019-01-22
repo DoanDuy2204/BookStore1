@@ -1,0 +1,150 @@
+*{
+	padding:0;
+	margin: 0;
+	font-family: 'Oswald', sans-serif;
+}
+body{
+	height: 100%;
+	width: 100%;
+	background: #ececec;
+}
+a{
+	text-decoration: none;
+	transition: 0.2s all;
+	color: white;
+}
+a:hover{
+	color: red;
+}
+li{
+	list-style-type: none;
+}
+div{
+	transition: 0.2s all;
+}
+i{
+	padding: 0 0.2em;	
+}
+/*start header*/
+.header{
+	width: 100%;
+}
+.account{
+	margin: auto;
+	background: #3c3a3a;
+    text-align: end;
+    height: 2.5em;
+    line-height: 2.5em;
+    padding-right: 10em;
+}
+.account a{
+	padding: 0 1em;
+}
+.bottom-header{
+	background: #da9031;
+	height: 6em;
+}
+.container{
+	width: 90%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	justify-content: space-between;
+}
+.nav{
+	width: 90%;
+}
+.nav i{
+	padding-right: 0.4em;
+}
+.nav li{
+	float: left;
+	width: 16%;
+	height: 3.5em;
+	line-height: 3.5em;
+	text-align: center;
+}
+.nav li a {
+	font-size: 1.2em;
+	display: block;
+}
+.nav li a:hover{
+	background: #e0b072;
+}
+.header-slide{
+	width: 90%;
+	margin: auto;
+	margin-top: 2em;
+	height: 18em;
+}
+.header-slide a{
+	float: left;
+	display: block;
+}
+.header-slide img{
+	box-shadow: 0 0 15px -3px;
+}
+.nav-bottom{
+	background: #da9031;
+	height: 4em;
+}
+.select{
+	width: 60%;
+}
+.select span{
+	color: white;
+	font-weight: bold;
+}
+.select li{
+	font-size: 1.1em;
+	color: white;
+	padding: 0 0.5em;
+	float: left;
+	position: relative;
+}
+.menu2 {
+	cursor: pointer;
+}
+.menu2 ul{
+	display: none;
+	position: absolute;
+	width: 8em;
+	background:  #e0b072;
+}
+.menu2 ul li{
+	font-size: 0.9em;
+	padding: 0.8em;
+}
+.menu2:hover ul{
+	cursor: pointer;
+	display: block;
+}
+.collections{
+	width: 40%;
+	padding-left:9em;
+}
+
+.collections input{
+	padding: 0.5em 1em;
+    font-size: 1em;
+    height: 1.4em;
+    width: 18em;
+    border: 1px solid #a9a9a9;
+    border-radius: 1em 0 0 1em;
+}
+::placeholder{
+	font-size: 1em;
+	color: #a9a9a9;
+}
+.collections button{
+	cursor: pointer;
+	border: 1px solid #a9a9a9;
+    border-left: none;
+    background: white;
+    border-radius: 0 1em 1em 0;
+    padding: 0 0.5em;
+    padding-top: 0.8em;
+    padding-bottom: 0.6em;
+}
+/*end header*/
