@@ -10,7 +10,7 @@
 	<properties>
 		<!-- Set charetUTF-8 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.responsing.outputEncoding>UTF-8</project.responsing.outputEncoding>
+		<project.resporting.outputEncoding>UTF-8</project.resporting.outputEncoding>
 
 		<!-- set version springframework -->
 		<springframework.version>5.0.0.RELEASE</springframework.version>
@@ -36,7 +36,7 @@
 			<version>${springframework.version}</version>
 		</dependency>
 
-	<!-- Add Springframework-security support -->
+		<!-- Add Springframework-security support -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
@@ -120,6 +120,14 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.15</version>
+					<configuration>
+						<argLine>-Dfile.encoding=UTF-8</argLine>
+					</configuration>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>

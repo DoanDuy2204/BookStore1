@@ -39,6 +39,12 @@ public class Customer {
 	@Column(name="doc")
 	private String doc;
 
+	@Column(name="gender")
+	private String gender;
+	
+	@Column(name="phone")
+	private String phone;
+	
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -90,5 +96,21 @@ public class Customer {
 
 	public void setDoc(String doc) {
 		this.doc = doc;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 }

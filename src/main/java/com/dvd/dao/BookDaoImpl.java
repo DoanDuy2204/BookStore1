@@ -398,6 +398,7 @@ public class BookDaoImpl implements BookDao {
 		bookOld.setPublishingHouse(book.getPublishingHouse());
 		bookOld.setAuthors(book.getAuthors());
 		bookOld.setDiscount(book.getDiscount());
+		bookOld.setPrice(book.getPrice());
 		bookOld.setQuantity(book.getQuantity());
 	}
 }

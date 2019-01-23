@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -14,7 +14,7 @@
 		<c:if test="${user==null}">
 			<a href='<c:url value="/user/login"></c:url>'>Đăng nhập<i class="fas fa-user-circle"></i>
 			</a>
-			<a href=""> Đăng kí <i class="fas fa-user-edit"></i></a>
+			<a href='<c:url value="/user/register"></c:url>'> Đăng kí <i class="fas fa-user-edit"></i></a>
 		</c:if>
 		<c:if test="${user!=null}">
 			<a>${user.userName}</a>
@@ -32,8 +32,7 @@
 					<li><a href='<c:url value="/"></c:url>'>Trang chủ</a></li>
 					<li><a
 						href='<c:url value="/book/books?numberPage=1&command=book"></c:url>'>Sách</a></li>
-					<li><a href='<c:url value="/blog"></c:url>'>Blog</a></li>
-					<li><a href='<c:url value="/advisory"></c:url>'>Tư vấn</a></li>
+<%-- 					<li><a href='<c:url value="/blog"></c:url>'>Blog</a></li> --%>
 					<li><a href='<c:url value="/contact"></c:url>'>Liên hệ</a></li>
 					<li><a href='<c:url value="/cart/carts"></c:url>'><i
 							class="fas fa-shopping-cart"></i>Giỏ hàng</a></li>

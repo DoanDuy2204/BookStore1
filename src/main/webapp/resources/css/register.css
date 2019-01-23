@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.register{width:90%;margin:1em auto;padding:2em 0;
+		box-shadow: 0 0 15px -4px; border-radius: 0.7em;}
+.register table{width:90%;margin:2em auto;}
+.register table th{font-size:1.1em;width:25%;}
+.register table input{ width: 50%; padding: 0.5em 1em; font-size: 1em;
+			margin: 1em 0;border-radius: 0.5em;border: 1px solid #a9a9a9;}
+#male,#female,#other{width:4%;}
+.register label{padding:0 1em;}
+.register button{padding:0.7em;position:relative;right:-30%;margin:1em 2em;font-size:1.1em;
+				transition:0.3s all;background: white;border:1px solid #dcdcdc;}
+.register button:hover{background:#dcdcdc;color:red;cursor: pointer;}
+#userError,.error{color:red;font-size: 0.9em;font-style: italic;}
+#userError{display:none;}
+#userError td,.error{padding:0 14em;}

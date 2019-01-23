@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -28,6 +29,9 @@ public class User {
 
 	@Column(name="role")
 	private String role;
+	
+	@Transient
+	private String passAgain;
 	
 	public User() {
 		super();
@@ -73,4 +77,13 @@ public class User {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+
+	public String getPassAgain() {
+		return passAgain;
+	}
+
+	public void setPassAgain(String passAgain) {
+		this.passAgain = passAgain;
+	}
+
 }

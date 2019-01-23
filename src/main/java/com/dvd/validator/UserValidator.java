@@ -14,24 +14,40 @@ public class UserValidator implements Validator {
 
 	@Override
 	public void validate(Object obj, Errors errors) {
-		User user = (User)obj;
+		User user = (User) obj;
 		String password = user.getPassword();
-		if(user.getUserName()==null || user.getUserName().equals("")) {
+		if (user.getPassAgain() != null) {
+			if (!user.getPassAgain().equals(password)) {
+				errors.rejectValue("password", "password.passAgain");
+				errors.rejectValue("passAgain", "password.passAgain");
+				return;
+			}
+		}
+		if (user.getUserName().equals(""))
 			errors.rejectValue("userName", "username.required");
-		}
-		if(user.getPassword()==null || user.getPassword().equals("")) {
+		if (user.getPassword().equals(""))
 			errors.rejectValue("password", "password.required");
-		}
-		if(password.contains("`") || password.contains("!") || password.contains("@") || 
-				password.contains("#") || password.contains("$") || password.contains("%") ||
-				password.contains("^") || password.contains("&") || password.contains("*") ||
-				password.contains("(") || password.contains(")") || password.contains("-") ||
-				password.contains("+") || password.contains("[") || password.contains("]") ||
-				password.contains("{") || password.contains("}") || password.contains("|") || 
-				password.contains("|") || password.contains(">") || 
-				password.contains(".") || password.contains(",") || password.contains("<") || 
-				password.contains("'") || password.contains(":") || password.contains(";")) {
+		String[] c = new String[] { "~", "!", "@", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "}", ":",
+				",", "\\", "|", "/", "?", "." };
+		boolean check = true;
+		for (String s : c)
+			if (password.contains(s)) {
+				check = false;
+				break;
+			}
+		if (!check)
 			errors.rejectValue("password", "password.contain");
+		if (user.getCustomer() != null) {
+			if (user.getCustomer().getName().equals(""))
+				errors.rejectValue("customer.name", "customer.name.required");
+			if (user.getCustomer().getEmail().equals(""))
+				errors.rejectValue("customer.email", "customer.email.required");
+			else {
+				if (!user.getCustomer().getEmail().contains("@gmail.com"))
+					errors.rejectValue("customer.email", "customer.email.format");
+			}
+			if (user.getCustomer().getAddress().equals(""))
+				errors.rejectValue("customer.address", "customer.address.required");
 		}
 	}
 

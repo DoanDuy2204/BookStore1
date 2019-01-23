@@ -81,8 +81,10 @@ public class BookController {
 				if(maxParam==null)
 					maxParam = "-1";
 				double max = Double.parseDouble(maxParam);
-				model.addAttribute("books", bookService.getAllBookByCost(nPage,total,min,max,0));
-				pageNumber = bookService.getAllBookByCost(nPage, total, min, max, -1).size()/total	;
+				model.addAttribute("books", bookService.getAllBookByCost(nPage,total,min,max,-1));
+				pageNumber = bookService.getAllBookByCost(nPage, total, min, max, 0).size()/total	;
+				model.addAttribute("min", min);
+				model.addAttribute("max", max);		
 				model.addAttribute("command", "cost");
 				break;
 			case "search" :
@@ -143,7 +145,7 @@ public class BookController {
 		for(int i=0;i<id.length;i++)
 			idAuthor[i]=Integer.parseInt(id[i]);
 		Book book = new Book();
-		book.setName( req.getParameter("name"));
+		book.setName(req.getParameter("nameBook"));
 		book.setPrice(Double.parseDouble(req.getParameter("price")));
 		book.setDiscount(Integer.parseInt(req.getParameter("discount")));
 		book.setCategory(categoryService.getCategoryById(idCategory));

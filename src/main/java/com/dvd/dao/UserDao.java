@@ -11,4 +11,6 @@ public interface UserDao {
 	public User checkUser(String pass, String user);
 	public long countUserInDB();
 	public void disableUser(String userName);
+	public User getUser(String userName);
+	public void insertUser(User user);
 }

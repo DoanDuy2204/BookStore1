@@ -43,7 +43,8 @@ var btnUser = document.getElementById('btnUser');
  */
 window.addEventListener('load',function(){
 	onLoad(btnDashBoard,null,1,0);
-},false);
+},true)
+
 /**
  * This function is used to Load data when click button in Admin.js.
  * @param btn : button is clicked in admin.jsp.
@@ -61,7 +62,6 @@ function onLoad(btn,name,check,num){
 	http.open('Get',btn.value+(name==null?"":("&name="+name)),true);
 	http.send();
 }
-
 /**
  * This function is used to process JSON when Ajax return.
  * @param resp : response of server when Ajax send request.
@@ -85,6 +85,9 @@ function myFunction(resp,name,check,num){
 			break;
 		case 4 :
 			managerAccount(arr,num,name);
+			break;
+		case 5 :
+			infoAdmin(arr);
 			break;
 	}
 }
@@ -464,14 +467,14 @@ function  updateBook(resp){
 			if(!check) check=true;
 	}
 	content += '<div class="update"><form action="/BookStore1/book/updateBook" enctype="mutilpart/form-data">'
-				+'<input type="hidden" name="id" value="'+book.id+'"/>'
+				+'<input type="hidden" name="idBook" value="'+book.id+'"/>'
 				+'<table><tr><th>Tên sản phẩm : </th><td>'
-				+'<input type="text" name="name" value="'+book.name+'" /></td></tr>'
+				+'<input type="text" name="nameBook" value="'+book.name+'" /></td></tr>'
 				+'<tr><th>Thể loại : </th><td>'
 				+'<select name="category">'+category+'</select></td></tr>'
 				+'<tr><th>Giá(VNĐ) : </th><td><input type="text" name="price" value="'+book.price.toLocaleString()+'"></td></tr>'
 				+'<tr><th>Giảm giá(VNĐ) : </th><td><input type="number" name="discount" value="'+book.discount+'"></td></tr>'
-				+'<tr><th>Giảm giá(VNĐ) : </th><td><input type="number" name="quantity" value="'+book.quantity+'"></td></tr>'
+				+'<tr><th>Số lượng(VNĐ) : </th><td><input type="number" name="quantity" value="'+book.quantity+'"></td></tr>'
 				+'<input type="file" name="name" value="'+book.name+'" /></td></tr>'
 				+'<tr><th>Nhà xuất bản : </th><td>'
 				+'<select name="publishingHouse">'+publishingHouse+'</select>'
@@ -501,4 +504,28 @@ function getAll(check,handleData){
 	if(check==3) url='/BookStore1/api/admin/getAllAuthor';
 	http.open("Get",url,true);
 	http.send();
+}
+
+/**
+ * This method is used to get Information of Admin.
+ * @param arr
+ * @returns
+ */
+function infoAdmin(arr){
+	var content = '<h2>Thông tin của Admin</h2><hr>'
+		+'<div class="infor"><table><tr>'
+		+'<th>Tên của Admin : </th>'
+		+'<td>Đoàn Văn Duy</td></tr><tr>'
+		+'<th>Ngày sinh : </th><td>1998-04-22</td>'
+		+'</tr><tr><th>Địa chỉ : </th>'
+		+'<td>Việt Tiến Việt Yên, Bắc Giang</td></tr>'
+		+'<tr><th>Email : </th><td>doanvanduy22041998@gmail.com</td>'
+		+'</tr><tr><th>Sinh viên : </th><td>Đại học công nghiệp Hà Nội</td>'
+		+'</tr><tr><th>Sở thích : </th><td>Lập trình ngôn ngữ JAVA</td></tr></table>';
+	btmContent.innerHTML = content;
+}
+function click(){
+	var content = '<h2>Cập nhật thông tin</h2><hr><h3>Chức năng này đang được cập nhật.</h3>';
+	btmContent.innerHTML = content;
+		
 }

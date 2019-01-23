@@ -1,5 +1,7 @@
 package com.dvd.dao;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 
+import com.dvd.entity.Customer;
 import com.dvd.entity.User;
 
 /**
@@ -29,6 +32,8 @@ public class UserDaoImpl implements UserDao {
 	 */
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
 	/**
 	 * This method is used to check User in page Login.
@@ -103,5 +108,35 @@ public class UserDaoImpl implements UserDao {
 		Session session = sessionFactory.getCurrentSession();
 		User user = session.get(User.class, userName);
 		user.setEnable(0);
+	}
+
+	/**
+	 * This method is used to get User by userName.
+	 * @param userName : userName of User
+	 */
+	@Override
+	public User getUser(String userName) {
+		return sessionFactory.getCurrentSession().get(User.class, userName);
+	}
+
+	/**
+	 * This method is used to insert User in DB.
+	 * @param user
+	 * @return
+	 */
+	@Override
+	public void insertUser(User user) {
+		//create Session 
+		Session session = sessionFactory.getCurrentSession();
+		//Save user
+		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		user.setRole("CUSTOMER");
+		user.setEnable(1);
+		session.save(user);
+		Customer customer = user.getCustomer();
+		Date date = new Date();
+		customer.setDoc(sdf.format(date));
+		customer.setUser(user);
+		session.save(customer);
 	}
 }

@@ -46,4 +46,14 @@ public class UserServiceImpl implements UserService {
 	public void disableUser(String userName) {
 		userDao.disableUser(userName);
 	}
+
+	@Override
+	public User getUser(String userName) {
+		return userDao.getUser(userName);
+	}
+
+	@Override
+	public void insertUser(User user) {
+		userDao.insertUser(user);
+	}
 }

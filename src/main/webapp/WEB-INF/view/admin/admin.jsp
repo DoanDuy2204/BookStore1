@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	<c:if test="${updatesucess!=null}">
 		<script>
-			onLoad(document.getElementById("btnTransaction"),null,2,1);
+			alert("UPLOAD THÀNH CÔNG")
 		</script>
 	</c:if>
 	<script type="text/javascript" src='<c:url value="/resources/js/Chart.min.js"></c:url>'></script>
@@ -33,14 +33,12 @@
 						<li><button id="btnUser" onclick="onLoad(this,null,4,1)" value='<c:url value="/api/admin/account?numberPage=1"></c:url>'><i class="far fa-user"></i>Tài khoản</button></li>
 					</ul>
 				</li>
-				<li><button><i class="fas fa-solar-panel"></i>Doanh thu<i onclick="down(2)" class="fas fa-angle-down"></i></button>
+				<li><button><i class="fas fa-solar-panel"></i>Tài khoản<i onclick="down(2)" class="fas fa-angle-down"></i></button>
 					<ul id="ul-down1">
-						<li><button onclick="onLoad(this,5)"><i class="fas fa-book"></i>Mới nhất</button></li>
-						<li><button onclick="onLoad(this,6)"><i class="fas fa-clipboard-list"></i>Trong năm</button></li>
-						<li><button onclick="onLoad(this,7)"><i class="far fa-user"></i>Tất cả</button></li>
+						<li><button id="btnInforUser" value='<c:url value="/api/admin/getUser?username=${user.userName}"></c:url>' onclick="onLoad(this,null,5,0)" ><i class="fas fa-book"></i>Thông tin</button></li>
+						<li><button id="btnUpdateUser" value='<c:url value="/api/admin/updateAdmin"></c:url>' onclick="click()"><i class="fas fa-clipboard-list"></i>Cập nhật</button></li>
 					</ul>
 				</li>
-				<li><button onclick="onload(this,8)"><i class="fas fa-user-circle"></i>Tài khoản</button></li>
 				<li><button onclick="onload(this,9)"><i class="fas fa-users-cog"></i>Cài đặt</button></li>
 				<li><button><i class="fas fa-sign-out-alt"></i><a style="color:#8d9795;" href='<c:url value="/user/logout"></c:url>'>Đăng xuất</a></button></li>
 			</ul>

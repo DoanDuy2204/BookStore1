@@ -90,3 +90,7 @@ a{color:white;text-decoration: none;}
 .bottom .update button:hover{background: blue;color: red;cursor: pointer;}
 .bottom .update label{margin-right:1em;}
 .bottom .update span{width: 50%;display: inline-block;}
+.bottom .infor table{width: 80%;margin: 2em auto;border: 1px solid black;
+				background: #333333;border-collapse: collapse;}
+.bottom .infor table td,.bottom .infor table th{border: 1px solid black;padding: 0.8em;
+					color:white;font-size: 1.1em;}

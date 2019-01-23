@@ -11,4 +11,6 @@ public interface UserService {
 	public User checkUser(String usarname, String pass);
 	public long countUserInDB();
 	public void disableUser(String userName);
+	public User getUser(String userName);
+	public void insertUser(User user);
 }

@@ -88,6 +88,7 @@
 		<c:if test="${command eq 'category'}"><c:set var="command" value="&command=${command}&categoryId=${id}"></c:set></c:if>
 		<c:if test="${command eq 'publishingHouse'}"><c:set var="command" value="&command=${command}&publishingHouseId=${id}"></c:set></c:if>
 		<c:if test="${command eq 'catelog'}"><c:set var="command" value="&command=${command}&catelog=${catelog}"></c:set></c:if>
+		<c:if test="${command eq 'cost'}"><c:set var="command" value="&command=${command}&min=${min}&max=${max}"></c:set></c:if>
 			<c:forEach var="i" begin="1" end="${pageNumber}">
 				<a href='<c:url value="books?numberPage=${i}${command}"></c:url>'
 				   style="padding:0 0.3em;<c:if test="${numberPage eq i}">text-decoration:underline;color:red;</c:if>">

@@ -41,9 +41,9 @@ public class AuthorDaoImpl implements AuthorDao {
 		String arr = "";
 		for(int i=0;i<idAuthor.length;i++)
 			arr += ""+ idAuthor[i]+","; 
-		arr.substring(0, arr.length()-1);
-		System.out.println(arr);
-		String query = "From Author a where a.id IN("+arr+")";
+		String newArr = arr.substring(0, arr.length()-1);
+		System.out.println(newArr);
+		String query = "From Author a where a.id IN("+newArr+")";
 		return sessionFactory.getCurrentSession().createQuery(query,Author.class).getResultList();
 	}
 

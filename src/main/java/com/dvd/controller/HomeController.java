@@ -71,4 +71,10 @@ public class HomeController {
 		model.addAttribute("publishingHouses", publishingHouses);
 		return "home";
 	}
+	
+	@RequestMapping("/contact")
+	public String contact(Model model) {
+		model.addAttribute("contact", "contact");
+		return "home";
+	}
 }
