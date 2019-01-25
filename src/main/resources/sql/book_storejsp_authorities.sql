@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
--- Host: localhost    Database: book_store1
+-- Host: localhost    Database: bookstore
 -- ------------------------------------------------------
 -- Server version	8.0.13
 
