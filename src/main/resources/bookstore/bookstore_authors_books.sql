@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
 --
--- Host: localhost    Database: bookstore
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,7 +28,7 @@ CREATE TABLE `authors_books` (
   PRIMARY KEY (`book_id`,`author_id`),
   KEY `author_id` (`author_id`),
   CONSTRAINT `author_id` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`),
-  CONSTRAINT `book_id` FOREIGN KEY (`book_id`) REFERENCES `products` (`id`)
+  CONSTRAINT `book_id` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +38,7 @@ CREATE TABLE `authors_books` (
 
 LOCK TABLES `authors_books` WRITE;
 /*!40000 ALTER TABLE `authors_books` DISABLE KEYS */;
-INSERT INTO `authors_books` VALUES (1,3),(1,24),(1,25),(1,27),(1,31),(1,40),(2,29),(2,32),(3,42),(4,30),(5,55),(5,56),(5,57),(6,36),(7,33),(8,26),(9,63),(9,64),(9,65),(9,66),(10,43),(10,44),(10,45),(10,46),(10,47),(10,48),(10,49),(10,50),(10,51),(10,52),(10,53),(10,54),(10,58),(11,59),(11,60),(11,61),(11,62),(12,5),(12,34),(13,35),(14,38),(15,4),(15,39),(16,37),(16,41),(17,23),(19,28),(20,3),(20,14),(21,15),(22,19),(23,17),(23,18),(26,6),(26,7),(26,8),(26,9),(26,10),(26,11),(26,12),(26,13),(26,16),(26,20),(26,21),(26,68),(27,22);
+INSERT INTO `authors_books` VALUES (1,21),(1,22),(1,23),(1,25),(1,28),(2,27),(2,29),(3,40),(4,53),(4,54),(4,55),(6,33),(7,30),(8,41),(8,42),(8,43),(8,44),(8,45),(8,46),(8,47),(8,48),(8,49),(8,50),(8,51),(8,52),(9,56),(10,57),(10,58),(10,59),(10,60),(11,63),(11,64),(12,31),(13,32),(14,35),(15,36),(16,38),(18,24),(19,26),(19,39),(20,12),(21,14),(21,15),(23,16),(25,34),(26,1),(26,2),(26,3),(26,4),(26,5),(26,6),(26,7),(26,8),(26,9),(26,10),(26,11),(26,13),(26,37),(26,61),(26,62),(26,65),(27,20),(28,17),(29,18),(30,19);
 /*!40000 ALTER TABLE `authors_books` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-23 11:42:00
+-- Dump completed on 2019-03-01 21:30:24

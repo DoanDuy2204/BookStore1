@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
 --
--- Host: localhost    Database: bookstore
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,28 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `authorities`
+-- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `authorities`;
+DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `authorities` (
-  `username` varchar(20) NOT NULL,
-  `authority` varchar(30) NOT NULL,
-  UNIQUE KEY `authorities_idx_1` (`username`,`authority`),
-  CONSTRAINT `authorities_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `doc` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `authorities`
+-- Dumping data for table `categories`
 --
 
-LOCK TABLES `authorities` WRITE;
-/*!40000 ALTER TABLE `authorities` DISABLE KEYS */;
-INSERT INTO `authorities` VALUES ('DoanDuy','ROLE_EMPLOYEE'),('NguyenAnh','ROLE_ADMIN'),('NguyenAnh','ROLE_EMPLOYEE');
-/*!40000 ALTER TABLE `authorities` ENABLE KEYS */;
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Sách giáo khoa','2018-12-07'),(2,'Sách lịch sử','2018-12-07'),(3,'Sách thiếu nhi','2018-12-07'),(4,'Sách văn học','2018-12-07'),(5,'Truyện thanh','2018-12-07');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-23 11:42:01
+-- Dump completed on 2019-03-01 21:30:25

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
 --
--- Host: localhost    Database: bookstore
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,33 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `khach_hang`
+-- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `khach_hang`;
+DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `khach_hang` (
-  `so_ho_chieu` varchar(45) NOT NULL,
-  `quy_danh` varchar(45) DEFAULT NULL,
-  `ho` varchar(45) NOT NULL,
-  `ten_va_ten_dem` varchar(45) NOT NULL,
-  `dia_chi` varchar(45) NOT NULL,
-  `ngay_sinh` datetime NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `ngay_het_han_ho_chieu` datetime NOT NULL,
-  `quoc_tich` varchar(45) NOT NULL,
-  PRIMARY KEY (`so_ho_chieu`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) DEFAULT NULL,
+  `book_id` int(11) DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `data` varchar(45) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transaction_id_idx` (`transaction_id`),
+  CONSTRAINT `id` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `khach_hang`
+-- Dumping data for table `orders`
 --
 
-LOCK TABLES `khach_hang` WRITE;
-/*!40000 ALTER TABLE `khach_hang` DISABLE KEYS */;
-/*!40000 ALTER TABLE `khach_hang` ENABLE KEYS */;
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,1,2,54000,'hinhhoc12',1,2),(2,1,3,35000,'hoahoc9',1,3);
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-23 11:42:00
+-- Dump completed on 2019-03-01 21:30:25

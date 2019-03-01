@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
 --
--- Host: localhost    Database: bookstore
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,28 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `interactives`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `interactives`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `users` (
-  `username` varchar(20) NOT NULL,
-  `password` varchar(68) NOT NULL,
-  `enabled` int(11) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`username`)
+CREATE TABLE `interactives` (
+  `id` int(11) NOT NULL,
+  `star` float NOT NULL,
+  `comment` text NOT NULL,
+  `book_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_book_interactive` (`book_id`),
+  CONSTRAINT `fk_book_interactive` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `interactives`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('DoanDuy','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1),('NguyenAnh','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `interactives` WRITE;
+/*!40000 ALTER TABLE `interactives` DISABLE KEYS */;
+/*!40000 ALTER TABLE `interactives` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-23 11:41:59
+-- Dump completed on 2019-03-01 21:30:22

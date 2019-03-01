@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
 --
--- Host: localhost    Database: bookstore
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,35 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `chuyen_bay`
+-- Table structure for table `authorities`
 --
 
-DROP TABLE IF EXISTS `chuyen_bay`;
+DROP TABLE IF EXISTS `authorities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `chuyen_bay` (
-  `ma_chuyen_bay` int(11) NOT NULL,
-  `diem_di` varchar(45) NOT NULL,
-  `diem_den` varchar(45) NOT NULL,
-  `khoi_hanh` varchar(45) NOT NULL,
-  `ngay` datetime NOT NULL,
-  `gio_di_du_kien` time NOT NULL,
-  `gio_den_du_kine` time NOT NULL,
-  `so_tien` double NOT NULL,
-  `mo_ta` varchar(45) DEFAULT NULL,
-  `ten_dich_vu` varchar(45) NOT NULL,
-  `loai_ve` varchar(45) NOT NULL,
-  PRIMARY KEY (`ma_chuyen_bay`)
+CREATE TABLE `authorities` (
+  `username` varchar(20) NOT NULL,
+  `authority` varchar(30) NOT NULL,
+  UNIQUE KEY `authorities_idx_1` (`username`,`authority`),
+  CONSTRAINT `authorities_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `chuyen_bay`
+-- Dumping data for table `authorities`
 --
 
-LOCK TABLES `chuyen_bay` WRITE;
-/*!40000 ALTER TABLE `chuyen_bay` DISABLE KEYS */;
-/*!40000 ALTER TABLE `chuyen_bay` ENABLE KEYS */;
+LOCK TABLES `authorities` WRITE;
+/*!40000 ALTER TABLE `authorities` DISABLE KEYS */;
+INSERT INTO `authorities` VALUES ('DoanDuy','ROLE_EMPLOYEE'),('NguyenAnh','ROLE_ADMIN'),('NguyenAnh','ROLE_EMPLOYEE');
+/*!40000 ALTER TABLE `authorities` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-23 11:42:00
+-- Dump completed on 2019-03-01 21:30:24

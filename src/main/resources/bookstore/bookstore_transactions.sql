@@ -1,8 +1,8 @@
-﻿-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
 --
--- Host: localhost    Database: bookstore
+-- Host: 127.0.0.1    Database: bookstore
 -- ------------------------------------------------------
--- Server version	8.0.13
+-- Server version	8.0.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,30 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `blogs`
+-- Table structure for table `transactions`
 --
 
-DROP TABLE IF EXISTS `blogs`;
+DROP TABLE IF EXISTS `transactions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `blogs` (
+CREATE TABLE `transactions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `content` varchar(45) NOT NULL,
-  `view` int(11) DEFAULT NULL,
-  `image_link` varchar(45) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `user_name` varchar(45) DEFAULT NULL,
+  `user_email` varchar(45) DEFAULT NULL,
+  `user_phone` varchar(45) DEFAULT NULL,
+  `amount` double DEFAULT NULL,
+  `payment` varchar(45) DEFAULT NULL,
+  `payment_info` varchar(45) DEFAULT NULL,
+  `security` varchar(45) DEFAULT NULL,
+  `doc` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `blogs`
+-- Dumping data for table `transactions`
 --
 
-LOCK TABLES `blogs` WRITE;
-/*!40000 ALTER TABLE `blogs` DISABLE KEYS */;
-INSERT INTO `blogs` VALUES (1,'Những kỉ lục thú vị về sách','nhungkilucthuvibvesach',20,'nhungkilucvesach'),(2,'Sự thật không phải như lúc nào chũng ta thấy','suthatkhongphainhulucnaochungtathay',50,'suthatkhongphailucnaocungtathay'),(3,'Hồi ức của cựu giám đốc FBI chưa phát hành đã bán hết','hoiuccuagiamdocfbi',100,'hoiucgiamdocfbi'),(4,'Phương pháp đọc sách hô hấp- Đọc nhanh, hiểu sâu, nhớ lâu','phuongphapdocsachhohap',20,'phuongphapdochohap'),(5,'Trang tử tâm đắc: Chìa khóa cho mọi vấn đề của đỏi người  ','trangtutamdac',20,'trangtutamdac');
-/*!40000 ALTER TABLE `blogs` ENABLE KEYS */;
+LOCK TABLES `transactions` WRITE;
+/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (1,1,1,NULL,NULL,NULL,89000,'Payal',NULL,NULL,'2018-11-20 00:00:00');
+/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-23 11:41:59
+-- Dump completed on 2019-03-01 21:30:23
